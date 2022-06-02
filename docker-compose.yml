@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  database:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=back-csaas
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+        - postgresql-volume:/var/lib/postgresql/data
+volumes:
+    postgresql-volume:
