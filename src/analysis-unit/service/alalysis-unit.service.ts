@@ -11,12 +11,12 @@ export class AlalysisUnitService {
         @InjectRepository(AnalysisUnit) private analystRepo: Repository<AnalysisUnit>
     ){}
 
-    getAll(){
+    findAll(){
         return this.analystRepo.find();
     }
 
-    getOne(id: number){
-        return this.analystRepo.findOne(id);
+    findOne(id: number){
+        return this.analystRepo.findOneBy({id});
     }
 
     create (analyst: AnalysisUnitDto){
@@ -25,10 +25,14 @@ export class AlalysisUnitService {
     }
 
     async update (id: number, analyst: AnalysisUnitDto){
-        const newAnalyst= await this.analystRepo.findOne(id);
+        const newAnalyst= await this.analystRepo.findOneBy({id});
         this.analystRepo.merge(newAnalyst, analyst);
         return this.analystRepo.save(newAnalyst);
     }
 
+    async delete (id: number){
+        await this.analystRepo.delete(id);
+        return true;
+    }
 
 }
