@@ -1,12 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { CaseModule } from './case/case.module';
-import { ConsultantModule } from './consultant/consultant.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [CaseModule, 
-    ConsultantModule,
+  imports: [CaseModule,
     ConfigModule.forRoot({
       envFilePath:['.env.development'],
       isGlobal: true,
