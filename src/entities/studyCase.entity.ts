@@ -16,6 +16,6 @@ export class StudyCase{
     @OneToMany(() => Intervention, (intervention) => intervention.studyCase)
     intervention: Intervention[]
 
-    @OneToMany(() => Case, (case) => case.studyCase)
-    case: Case[]
+    @OneToMany(() => Case, (cases) => cases.studyCase)
+    cases: Case[]
 }

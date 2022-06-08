@@ -12,7 +12,7 @@ export class Question{
     @Column()
     question: string;
 
-    @ManyToOne(()=> Case, (case) => case.questions)
-    case: Case
+    @ManyToOne(() => Case, (cases) => cases.questions)
+    cases: Case
 }
 

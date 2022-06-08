@@ -18,7 +18,7 @@ export class AnalysisUnit {
     @Column()
     tipo: string;
 
-    @ManyToOne(()=> Case, (case) => case.analysisUnits)
-    case: Case
+    @ManyToOne(()=> Case, (cases) => cases.analysisUnit)
+    cases: Case
 
 }

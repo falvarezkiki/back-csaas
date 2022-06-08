@@ -17,16 +17,16 @@ export class Case{
     @Column()
     descriotion: string;
    
-    @OneToMany(() => Question, (question) => question.case)
+    @OneToMany(() => Question, (question) => question.cases)
     questions: Question[]
 
-    @OneToMany(() => TheoreticalProposition, (theoreticalProposition) => theoreticalProposition.case)
+    @OneToMany(() => TheoreticalProposition, (theoreticalProposition) => theoreticalProposition.cases)
     theoreticalProposition: TheoreticalProposition[]
 
-    @OneToMany(() => AnalysisUnit, (analysisUnit) => analysisUnit.case)
-    analysisUnit: AnalysisUnit[]
+    @OneToMany(() => AnalysisUnit, (analysisUnit) => analysisUnit.cases)
+    analysisUnit: AnalysisUnit[] 
 
-    @ManyToOne(()=> StudyCase, (studyCase) => studyCase.cases)
+    @ManyToOne(() => StudyCase, (studyCase) => studyCase.cases)
     studyCase: StudyCase
 
 

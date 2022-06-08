@@ -1,0 +1,15 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "back-csaas",
+    "entities": ["src/**/*.entity.ts"],
+    "synchronize": false,
+    "migrationsTableName": "migrationsCSaaS",
+    "migrations": ["src/database/migrationsCSaaS/*.ts"],
+    "cli": {
+        "migrationsDir": "src/database/migrationsCSaaS"
+    }
+}

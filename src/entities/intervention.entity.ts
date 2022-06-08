@@ -15,6 +15,6 @@ export class Intervention{
     @Column()
     consulter: string;
 
-    @ManyToOne(()=> StudyCase, (studyCase) => StudyCase.interventions)
+    @ManyToOne(()=> StudyCase, (studyCase) => studyCase.intervention)
     studyCase: StudyCase
 }

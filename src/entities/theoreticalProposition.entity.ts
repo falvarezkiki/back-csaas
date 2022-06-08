@@ -12,6 +12,6 @@ export class TheoreticalProposition{
     @Column()
     name: string;
 
-    @ManyToOne(()=> Case, (case) => case.theoreticalPropositions)
-    case: Case
+    @ManyToOne(()=> Case, (cases) => cases.theoreticalProposition)
+    cases: Case
 }
